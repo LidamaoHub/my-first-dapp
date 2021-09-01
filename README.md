@@ -1,72 +1,71 @@
-# My Dapp
+# 我的应用
 
-This project is for the blockchain application My Dapp. It contains code for the Smart Contract, web-based dapp and NodeJS server. 
+该项目适用于区块链应用程序 My Dapp。它包含智能合约、基于 Web 的 dapp 和 NodeJS 服务器的代码。
 
-# Pre-requisites
+# 先决条件
 
-In order to develop and build "My Dapp," the following pre-requisites must be installed:
+为了开发和构建“我的 Dapp”，必须安装以下先决条件：
 
-* [Visual Studio Code](https://code.visualstudio.com/download) (or any IDE for editing Javascript)
+* [Visual Studio Code](https://code.visualstudio.com/download)（或任何用于编辑 Javascript 的 IDE）
 * [NodeJS](https://nodejs.org/en/download/)
-* [Yarn](https://classic.yarnpkg.com/en/docs/install) (DappStarter uses [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces))
+* [Yarn](https://classic.yarnpkg.com/en/docs/install) (DappStarter 使用 [Yarn Workspaces](https://classic.yarnpkg.com/en/docs/workspaces))
 
-### Windows Users
+### Windows 用户
 
-Before you proceed with installation, it's important to note that many blockchain libraries either don't work or generate errors on Windows. If you try installation and can't get the startup scripts to completion, this may be the problem. In that case, it's best to install and run DappStarter using Windows Subsystem for Linux (WSL). Here's a [guide to help you install WSL](https://docs.decentology.com/guides/windows-subsystem-for-linux-wsl).
+在继续安装之前，请务必注意，许多区块链库在 Windows 上要么不工作，要么生成错误。如果您尝试安装但无法完成启动脚本，这可能是问题所在。在这种情况下，最好使用 Windows Subsystem for Linux (WSL) 安装和运行 DappStarter。这是 [帮助您安装 WSL 的指南](https://docs.decentology.com/guides/windows-subsystem-for-linux-wsl)。
 
-Blockchains known to require WSL: Solana
-# Installation
+已知需要 WSL 的区块链：Solana
+＃ 安装
 
-Using a terminal (or command prompt), change to the folder containing the project files and type: `yarn` This will fetch all required dependencies. The process will take 1-3 minutes and while it is in progress you can move on to the next step.
+使用终端（或命令提示符），切换到包含项目文件的文件夹并键入：`yarn` 这将获取所有必需的依赖项。该过程将需要 1-3 分钟，在此过程中您可以继续进行下一步。
 
-# Yarn Errors
+# 纱线错误
 
-You might see failures related to the `node-gyp` package when Yarn installs dependencies.
-These failures occur because the node-gyp package requires certain additional build tools
-to be installed on your computer. Follow the [instructions](https://www.npmjs.com/package/node-gyp) for adding build tools and then try running `yarn` again.
+当 Yarn 安装依赖项时，您可能会看到与 `node-gyp` 包相关的失败。
+出现这些故障是因为 node-gyp 包需要某些额外的构建工具
+安装在您的计算机上。按照 [instructions](https://www.npmjs.com/package/node-gyp) 添加构建工具，然后再次尝试运行 `yarn`。
 
-# Build, Deploy and Test
-Using a terminal (or command prompt), change to the folder containing the project files and type: `yarn start` This will run all the dev scripts in each project package.json.
-
-
-## File Locations
-Here are the locations of some important files:
-* Contract Code: [packages/dapplib/contracts](packages/dapplib/contracts)
-* Dapp Library: [packages/dapplib/src/dapp-lib.js](packages/dapplib/src/dapp-lib.js) 
-* Blockchain Interactions: [packages/dapplib/src/blockchain.js](packages/dapplib/src/blockchain.js)
-* Unit Tests: [packages/dapplib/tests](packages/dapplib/tests)
-* UI Test Harnesses: [packages/client/src/dapp/harness](packages/client/src/dapp/harness)
+# 构建、部署和测试
+使用终端（或命令提示符），切换到包含项目文件的文件夹并输入：`yarn start` 这将运行每个项目 package.json 中的所有开发脚本。
 
 
-To view your dapp, open your browser to http://localhost:5000 for the DappStarter Workspace.
+## 文件位置
+以下是一些重要文件的位置：
+* 合约代码：[packages/dapplib/contracts](packages/dapplib/contracts)
+* Dapp库：[packages/dapplib/src/dapp-lib.js](packages/dapplib/src/dapp-lib.js)
+* 区块链交互：[packages/dapplib/src/blockchain.js](packages/dapplib/src/blockchain.js)
+* 单元测试：[packages/dapplib/tests](packages/dapplib/tests)
+* UI 测试工具：[packages/client/src/dapp/harness](packages/client/src/dapp/harness)
 
-We ♥️ developers and want you to have an awesome experience. You should be experiencing Dappiness at this point. If not, let us know and we will help. Join our [Discord](https://discord.gg/XdtJfu8W) or hit us up on Twitter [@Decentology](https://twitter.com/decentology).
 
-## Smart Contract
+要查看您的 dapp，请打开浏览器访问 DappStarter 工作区的 http://localhost:5000。
 
-`yarn migrate` to compile contracts/*.sol files, deploy them to the blockchain. 
+我们 ♥️ 开发人员并希望您拥有很棒的体验。此时您应该正在体验 Dappiness。如果没有，请告诉我们，我们会提供帮助。加入我们的 [Discord](https://discord.gg/XdtJfu8W) 或在 Twitter [@Decentology](https://twitter.com/decentology) 上联系我们。
 
-## Dapp
+## 智能合约
 
-Run the dapp in a separate terminal. You *must* have run `npm run deploy` for the dapp to see most recent smart contract changes.
+`yarn migrate` 编译合约/*.sol 文件，将它们部署到区块链。
 
-`yarn dapp` runs the dapp on http://localhost:5001 using webpack dev server
+## 应用
 
-## Server
+在单独的终端中运行 dapp。您*必须*已为 dapp 运行了 `npm run deploy` 以查看最近的智能合约更改。
 
-Run the server in a separate terminal. You *must* have run `npm run deploy` for the dapp to see most recent smart contract changes.
+`yarn dapp` 使用 webpack 开发服务器在 http://localhost:5001 上运行 dapp
 
-`yarn server` runs NodeJS server app on port 5002 with NestJS
+＃＃ 服务器
 
-## Testing
+在单独的终端中运行服务器。您*必须*已为 dapp 运行了 `npm run deploy` 以查看最近的智能合约更改。
 
-`test-config.js` contains settings used by test scripts
+`yarn server` 使用 NestJS 在端口 5002 上运行 NodeJS 服务器应用程序
 
-Run tests using `yarn test --script=[test file]`
+## 测试
 
-## Production Builds
+`test-config.js` 包含测试脚本使用的设置
 
-DappStarter currently does not provide blockchain migration scripts to be used in production. However, here are the scripts for generating production builds:
+使用 `yarn test --script=[test file]` 运行测试
 
-`yarn build:prod` generates dapp bundle for production.
+## 生产构建
 
+DappStarter 目前不提供用于生产的区块链迁移脚本。但是，以下是用于生成生产版本的脚本：
+
+`yarn build:prod` 为生产生成 dapp 包。
